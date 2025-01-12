@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://cpmp7l88r3jo0"]
+
+[ext_resource type="Script" path="res://client/book/book.gd" id="1_j4rhx"]
+[ext_resource type="PackedScene" uid="uid://dyp47hkpb00gc" path="res://client/pages/showroom_pages/street_page.tscn" id="1_nsgvd"]
+[ext_resource type="PackedScene" uid="uid://deibvkfuj7dgw" path="res://client/pages/showroom_pages/f1_page.tscn" id="2_hiy7r"]
+[ext_resource type="PackedScene" uid="uid://cj4ps4nm76p25" path="res://client/pages/photo_pages/photo_page_2.tscn" id="2_j5u6e"]
+[ext_resource type="Script" path="res://client/pages/showroom_pages/showroom_page.gd" id="3_856tg"]
+[ext_resource type="PackedScene" uid="uid://c5x3i1xpoq47x" path="res://client/pages/showroom_pages/derby_page.tscn" id="3_aj7tj"]
+[ext_resource type="PackedScene" uid="uid://cekxwd56unr3p" path="res://client/pages/photo_pages/photo_page_1.tscn" id="3_bmlro"]
+[ext_resource type="Texture2D" uid="uid://ck7mt1m6fih6u" path="res://global/resources/textures/left.png" id="4_aniys"]
+[ext_resource type="Texture2D" uid="uid://btvhal5u6w6vt" path="res://global/resources/textures/right.png" id="5_wcwwt"]
+[ext_resource type="PackedScene" uid="uid://dkgt7hxg08ovw" path="res://client/pages/photo_pages/cover_page.tscn" id="8_kf045"]
+
+[node name="Book" type="Node"]
+script = ExtResource("1_j4rhx")
+
+[node name="Pages" type="Node" parent="."]
+
+[node name="F1Page" parent="Pages" node_paths=PackedStringArray("_showroom", "_pan_slider", "_zoom_slider") instance=ExtResource("2_hiy7r")]
+offset_top = -1.0
+offset_bottom = -1.0
+script = ExtResource("3_856tg")
+_showroom = NodePath("MarginContainer/HBoxContainer/Container/SubViewportContainer/SubViewport/Showroom")
+_pan_slider = NodePath("MarginContainer/HBoxContainer/Container/Overlay/PanContainer/PanSlider")
+_zoom_slider = NodePath("MarginContainer/HBoxContainer/Container/Overlay/ZoomContainer/ZoomSlider")
+
+[node name="PhotoPage2" parent="Pages" instance=ExtResource("2_j5u6e")]
+
+[node name="DerbyPage" parent="Pages" node_paths=PackedStringArray("_showroom", "_pan_slider", "_zoom_slider") instance=ExtResource("3_aj7tj")]
+script = ExtResource("3_856tg")
+_showroom = NodePath("MarginContainer/HBoxContainer/Container/SubViewportContainer/SubViewport/Showroom")
+_pan_slider = NodePath("MarginContainer/HBoxContainer/Container/Overlay/PanContainer/PanSlider")
+_zoom_slider = NodePath("MarginContainer/HBoxContainer/Container/Overlay/ZoomContainer/ZoomSlider")
+
+[node name="PhotoPage1" parent="Pages" instance=ExtResource("3_bmlro")]
+
+[node name="StreetPage" parent="Pages" node_paths=PackedStringArray("_showroom", "_pan_slider", "_zoom_slider") instance=ExtResource("1_nsgvd")]
+script = ExtResource("3_856tg")
+_showroom = NodePath("MarginContainer/HBoxContainer/Container/SubViewportContainer/SubViewport/Showroom")
+_pan_slider = NodePath("MarginContainer/HBoxContainer/Container/Overlay/PanContainer/PanSlider")
+_zoom_slider = NodePath("MarginContainer/HBoxContainer/Container/Overlay/ZoomContainer/ZoomSlider")
+
+[node name="CoverPage" parent="Pages" instance=ExtResource("8_kf045")]
+
+[node name="Controls" type="Node" parent="."]
+
+[node name="PrevButton" type="Button" parent="Controls"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(0.180392, 0.180392, 0.188235, 1)
+theme_override_colors/icon_focus_color = Color(0.180392, 0.180392, 0.188235, 1)
+theme_override_colors/icon_pressed_color = Color(0.180392, 0.180392, 0.188235, 1)
+theme_override_colors/icon_hover_color = Color(0.180392, 0.180392, 0.188235, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.180392, 0.180392, 0.188235, 1)
+theme_override_colors/icon_disabled_color = Color(0.670588, 0.670588, 0.670588, 1)
+icon = ExtResource("4_aniys")
+
+[node name="NextButton" type="Button" parent="Controls"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(0.180392, 0.180392, 0.188235, 1)
+theme_override_colors/icon_focus_color = Color(0.180392, 0.180392, 0.188235, 1)
+theme_override_colors/icon_pressed_color = Color(0.180392, 0.180392, 0.188235, 1)
+theme_override_colors/icon_hover_color = Color(0.180392, 0.180392, 0.188235, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.180392, 0.180392, 0.188235, 1)
+theme_override_colors/icon_disabled_color = Color(0.670588, 0.670588, 0.670588, 1)
+icon = ExtResource("5_wcwwt")

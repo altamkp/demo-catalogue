@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://deibvkfuj7dgw"]
+
+[ext_resource type="PackedScene" uid="uid://bbdodqvatqhnh" path="res://client/pages/showroom_pages/showroom_page.tscn" id="1_fjewk"]
+[ext_resource type="ArrayMesh" uid="uid://d1cyltw1l3bvx" path="res://game/cars/f1.obj" id="2_myu84"]
+[ext_resource type="Material" uid="uid://b8air1eqqsfm4" path="res://game/cars/car_material.tres" id="2_yte0k"]
+
+[node name="F1Page" instance=ExtResource("1_fjewk")]
+
+[node name="F1" type="MeshInstance3D" parent="MarginContainer/HBoxContainer/Container/SubViewportContainer/SubViewport" index="1"]
+material_override = ExtResource("2_yte0k")
+mesh = ExtResource("2_myu84")
+skeleton = NodePath("../..")
+
+[node name="Label" parent="MarginContainer/HBoxContainer/PanelContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Formula 1"
+
+[node name="Label2" parent="MarginContainer/HBoxContainer/PanelContainer/ScrollContainer/VBoxContainer" index="1"]
+text = "Formula 1 (F1) is the pinnacle of motorsport, combining cutting-edge technology, precision engineering, and elite driving skill. Established in 1950, F1 has evolved into a global phenomenon, featuring iconic circuits like Monaco, Silverstone, and Monza. The cars are marvels of innovation, powered by hybrid turbocharged V6 engines that deliver over 1,000 horsepower. Aerodynamics play a crucial role, with intricate designs like front wings, diffusers, and DRS (Drag Reduction System) optimizing speed and handling. Teams such as Mercedes, Ferrari, and Red Bull dominate the sport, investing millions in research and development. Legendary drivers like Ayrton Senna, Michael Schumacher, and Lewis Hamilton have cemented their legacies through thrilling victories and record-breaking performances. F1 races, known as Grands Prix, test both driver endurance and team strategy, with championships decided over a season of 20+ races. From its historic roots to its modern-day spectacle, Formula 1 remains the ultimate showcase of speed, technology, and competition."

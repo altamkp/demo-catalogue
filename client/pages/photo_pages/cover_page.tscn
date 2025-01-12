@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkgt7hxg08ovw"]
+
+[ext_resource type="PackedScene" uid="uid://c64r2a5myudou" path="res://client/pages/photo_pages/photo_page.tscn" id="1_55akp"]
+[ext_resource type="Texture2D" uid="uid://b0ks8k7mhiisb" path="res://client/pages/photo_pages/cover.png" id="2_i0m4p"]
+
+[node name="CoverPage" instance=ExtResource("1_55akp")]
+
+[node name="TextureRect" parent="MarginContainer" index="0"]
+texture = ExtResource("2_i0m4p")

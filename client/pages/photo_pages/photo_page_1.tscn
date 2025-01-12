@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cekxwd56unr3p"]
+
+[ext_resource type="PackedScene" uid="uid://c64r2a5myudou" path="res://client/pages/photo_pages/photo_page.tscn" id="1_uhc8a"]
+[ext_resource type="Texture2D" uid="uid://cecomxeq1xmms" path="res://client/pages/photo_pages/photo_1.png" id="2_x6vys"]
+
+[node name="PhotoPage1" instance=ExtResource("1_uhc8a")]
+
+[node name="TextureRect" parent="MarginContainer" index="0"]
+texture = ExtResource("2_x6vys")

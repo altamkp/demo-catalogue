@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5x3i1xpoq47x"]
+
+[ext_resource type="PackedScene" uid="uid://bbdodqvatqhnh" path="res://client/pages/showroom_pages/showroom_page.tscn" id="1_57buy"]
+[ext_resource type="Material" uid="uid://b8air1eqqsfm4" path="res://game/cars/car_material.tres" id="2_2r1su"]
+[ext_resource type="ArrayMesh" uid="uid://de6qou2jfvr7y" path="res://game/cars/derby.obj" id="2_upi0i"]
+
+[node name="DerbyPage" instance=ExtResource("1_57buy")]
+
+[node name="Derby" type="MeshInstance3D" parent="MarginContainer/HBoxContainer/Container/SubViewportContainer/SubViewport" index="1"]
+material_override = ExtResource("2_2r1su")
+mesh = ExtResource("2_upi0i")
+skeleton = NodePath("../../../../../..")
+
+[node name="Label" parent="MarginContainer/HBoxContainer/PanelContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Derby"
+
+[node name="Label2" parent="MarginContainer/HBoxContainer/PanelContainer/ScrollContainer/VBoxContainer" index="1"]
+text = "Derby cars, often associated with demolition derbies, are modified vehicles designed for endurance and impact rather than speed. Originating in the United States in the 1950s, demolition derbies became a popular motorsport where drivers compete to disable opponents' cars while keeping their own operational. Derby cars are typically old, stripped-down sedans or coupes, reinforced with welded frames and removed glass to ensure safety. The focus is on durability, with engines often relocated or protected to withstand collisions. While not built for racing, derby cars showcase creativity in engineering and driving skill, as competitors strategically target opponents' vehicles. Events like the World Derby Championship highlight the sport's enduring appeal, celebrating controlled chaos and mechanical ingenuity. Derby cars may lack the glamour of other motorsports, but they embody a raw, adrenaline-fueled spectacle that continues to captivate audiences worldwide."

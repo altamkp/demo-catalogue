@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyp47hkpb00gc"]
+
+[ext_resource type="PackedScene" uid="uid://bbdodqvatqhnh" path="res://client/pages/showroom_pages/showroom_page.tscn" id="1_msn1u"]
+[ext_resource type="Material" uid="uid://b8air1eqqsfm4" path="res://game/cars/car_material.tres" id="2_eo0mh"]
+[ext_resource type="ArrayMesh" uid="uid://dhewqonnflh2h" path="res://game/cars/street.obj" id="2_u6eol"]
+
+[node name="StreetPage" instance=ExtResource("1_msn1u")]
+
+[node name="Street" type="MeshInstance3D" parent="MarginContainer/HBoxContainer/Container/SubViewportContainer/SubViewport" index="1"]
+material_override = ExtResource("2_eo0mh")
+mesh = ExtResource("2_u6eol")
+skeleton = NodePath("../../../../../..")
+
+[node name="Label" parent="MarginContainer/HBoxContainer/PanelContainer/ScrollContainer/VBoxContainer" index="0"]
+text = "Street"
+
+[node name="Label2" parent="MarginContainer/HBoxContainer/PanelContainer/ScrollContainer/VBoxContainer" index="1"]
+text = "Street cars, also known as production or road cars, are vehicles designed for everyday use but often modified for enhanced performance and style. Originating in the early 20th century, street cars became symbols of personal freedom and automotive culture. Iconic models like the Ford Mustang, Toyota Supra, and Honda Civic have gained legendary status for their blend of affordability, reliability, and tunability. Enthusiasts often customize street cars with aftermarket parts, such as turbochargers, suspension upgrades, and aerodynamic kits, to improve speed and handling. Street racing, though illegal in many areas, has popularized these cars in underground culture, inspiring films like The Fast and the Furious. Unlike purpose-built race cars, street cars balance practicality with performance, making them accessible to a wide audience. From muscle cars to compact tuners, street cars represent a diverse and vibrant segment of automotive history, celebrating individuality and innovation on the open road."
